@@ -1,29 +1,47 @@
-const menuBtn = document.getElementById("menuBtn");
-const mainNav = document.getElementById("mainNav");
+const menuButton = document.querySelector(".menu-button");
+const mainNav = document.querySelector("#main-nav");
+const siteHeader = document.querySelector(".site-header");
 
-menuBtn.addEventListener("click", function () {
-  mainNav.classList.toggle("open");
-});
+if (menuButton && mainNav && siteHeader) {
+    siteHeader.classList.add("menu-ready");
 
-const images = document.querySelectorAll(".img-box img");
+    function closeMenu() {
+        mainNav.classList.remove("is-open");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.textContent = "Menu";
+    }
 
-images.forEach(function (img) {
-  if (img.complete) {
-    checkImage(img);
-  } else {
-    img.addEventListener("load", function () {
-      checkImage(img);
+    menuButton.addEventListener("click", function () {
+        const isOpen = mainNav.classList.toggle("is-open");
+        menuButton.setAttribute("aria-expanded", isOpen);
+
+        if (isOpen) {
+            menuButton.textContent = "Close";
+        } else {
+            menuButton.textContent = "Menu";
+        }
     });
-    img.addEventListener("error", function () {
-      checkImage(img);
-    });
-  }
-});
 
-function checkImage(img) {
-  if (img.naturalWidth > 0) {
-    img.parentElement.classList.add("has-image");
-  } else {
-    img.remove();
-  }
+    mainNav.addEventListener("click", function (event) {
+        if (event.target.closest("a") && window.innerWidth <= 700) {
+            closeMenu();
+        }
+    });
+
+    document.addEventListener("keydown", function (event) {
+        if (
+            event.key === "Escape" &&
+            mainNav.classList.contains("is-open") &&
+            window.innerWidth <= 700
+        ) {
+            closeMenu();
+            menuButton.focus();
+        }
+    });
+
+    window.addEventListener("resize", function () {
+        if (window.innerWidth > 700) {
+            closeMenu();
+        }
+    });
 }

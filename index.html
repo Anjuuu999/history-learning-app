@@ -5,14 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dust &amp; Dynasties</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=3">
+    <script src="js/script.js?v=3" defer></script>
 </head>
 
 <body>
     <header class="site-header">
         <div class="container header-content">
             <a class="logo" href="index.html">Dust &amp; Dynasties</a>
-            <nav aria-label="Main navigation">
+            <button class="menu-button" type="button" aria-controls="main-nav" aria-expanded="false">Menu</button>
+            <nav id="main-nav" aria-label="Main navigation">
                 <ul class="nav-links">
                     <li><a class="active" href="index.html" aria-current="page">Home</a></li>
                     <li><a href="features.html">Features</a></li>

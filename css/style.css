@@ -67,9 +67,27 @@ body {
     border-bottom-color: var(--orange);
 }
 
-a:focus-visible {
+a:focus-visible,
+button:focus-visible {
     outline: 3px solid var(--teal);
     outline-offset: 5px;
+}
+
+.menu-button {
+    display: none;
+    padding: 10px 16px;
+    border: 1px solid var(--navy);
+    border-radius: 6px;
+    background-color: transparent;
+    color: var(--navy);
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.menu-button:hover {
+    background-color: var(--navy);
+    color: var(--cream);
 }
 
 .button-group {
@@ -139,13 +157,36 @@ a:focus-visible {
 
 @media (max-width: 700px) {
     .header-content {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
         gap: 12px;
     }
 
+    .menu-ready .menu-button {
+        display: block;
+    }
+
+    #main-nav {
+        width: 100%;
+    }
+
+    .menu-ready #main-nav {
+        display: none;
+    }
+
+    .menu-ready #main-nav.is-open {
+        display: block;
+    }
+
     .nav-links {
-        gap: 20px;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 10px 0;
     }
 
     .intro {
