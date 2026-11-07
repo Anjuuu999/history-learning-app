@@ -462,4 +462,44 @@ a:focus-visible, button:focus-visible {
         flex-direction: column;
         align-items: flex-start;
     }
+    .intro {
+    position: relative;
+    overflow: hidden;
+    background-image: none;
+    }
+
+    .intro::before {
+        content: "";
+        position: absolute;
+        inset: -8px;
+        background-image:
+            linear-gradient(
+                to right,
+                rgba(10, 18, 14, 0.92),
+                rgba(10, 18, 14, 0.55),
+                rgba(10, 18, 14, 0.12)
+            ),
+            url("../images/home-background.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter: blur(2px);
+    }
+
+    .intro > .container {
+        position: relative;
+        z-index: 1;
+    }
+
+    @media (max-width: 700px) {
+        .intro::before {
+            background-position: 65% center;
+            background-image:
+                linear-gradient(
+                    rgba(10, 18, 14, 0.65),
+                    rgba(10, 18, 14, 0.85)
+                ),
+                url("../images/home-background.jpg");
+        }
+    }
 }
