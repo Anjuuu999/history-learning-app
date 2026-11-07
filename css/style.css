@@ -17,6 +17,11 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 150px;
+}
+
 body {
     background-color: var(--background);
     color: var(--text);
@@ -54,6 +59,11 @@ img {
     height: auto;
 }
 
+::selection {
+    background-color: var(--gold);
+    color: var(--background);
+}
+
 .container {
     width: 88%;
     max-width: 1180px;
@@ -66,13 +76,13 @@ a:focus-visible, button:focus-visible {
 }
 
 .skip-link {
-    position: absolute;
+    position: fixed;
     top: -100px;
     left: 20px;
     background: var(--gold);
     color: var(--background);
     padding: 12px 20px;
-    z-index: 10;
+    z-index: 200;
 }
 
 .skip-link:focus {
@@ -80,7 +90,34 @@ a:focus-visible, button:focus-visible {
 }
 
 .site-header {
-    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(16, 24, 19, 0.96);
+    border-bottom: 1px solid rgba(227, 200, 136, 0.18);
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.site-header.is-scrolled {
+    border-bottom-color: rgba(227, 200, 136, 0.3);
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+@supports ((backdrop-filter: blur(20px)) or (-webkit-backdrop-filter: blur(20px))) {
+    .site-header {
+        background-color: rgba(16, 24, 19, 0.55);
+        -webkit-backdrop-filter: blur(20px) saturate(150%);
+        backdrop-filter: blur(20px) saturate(150%);
+    }
+
+    .site-header.is-scrolled {
+        background-color: rgba(16, 24, 19, 0.68);
+    }
 }
 
 .header-content {
@@ -88,7 +125,7 @@ a:focus-visible, button:focus-visible {
     justify-content: space-between;
     align-items: center;
     gap: 24px;
-    padding: 24px 0;
+    padding: 22px 0;
 }
 
 .logo {
@@ -96,16 +133,21 @@ a:focus-visible, button:focus-visible {
     font-size: 29px;
     text-decoration: none;
     line-height: 1.2;
+    transition: color 0.2s ease;
 }
 
 .logo span {
     color: var(--gold);
 }
 
+.logo:hover {
+    color: var(--gold);
+}
+
 .nav-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 32px;
+    gap: 28px;
     list-style: none;
 }
 
@@ -115,6 +157,9 @@ a:focus-visible, button:focus-visible {
     color: var(--muted);
     text-decoration: none;
     border-bottom: 1px solid transparent;
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease;
 }
 
 .nav-links a:hover, .nav-links a.active {
@@ -126,11 +171,14 @@ a:focus-visible, button:focus-visible {
     display: none;
     padding: 10px 16px;
     border: 1px solid var(--gold);
-    border-radius: 3px;
+    border-radius: 6px;
     background: transparent;
     color: var(--gold);
     font: inherit;
     cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
 }
 
 .menu-button:hover {
@@ -181,6 +229,7 @@ a:focus-visible, button:focus-visible {
 
 .intro-copy {
     max-width: 580px;
+    animation: fade-up 0.8s ease;
 }
 
 .intro .eyebrow {
@@ -211,11 +260,17 @@ a:focus-visible, button:focus-visible {
     display: inline-block;
     padding: 13px 22px;
     border: 1px solid transparent;
-    border-radius: 3px;
+    border-radius: 6px;
     font-size: 14px;
     font-weight: bold;
     text-align: center;
     text-decoration: none;
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 .button-primary {
@@ -238,6 +293,10 @@ a:focus-visible, button:focus-visible {
 .button-secondary:hover {
     background: var(--gold);
     color: var(--background);
+}
+
+.button:active {
+    transform: scale(0.98);
 }
 
 .intro-note {
@@ -287,6 +346,7 @@ a:focus-visible, button:focus-visible {
     text-decoration: underline;
     text-underline-offset: 5px;
     font-size: 14px;
+    transition: color 0.2s ease;
 }
 
 .text-link:hover {
@@ -309,14 +369,21 @@ a:focus-visible, button:focus-visible {
     min-width: 0;
     padding: 28px;
     border: 1px solid var(--border);
+    border-radius: 10px;
     text-decoration: none;
     display: flex;
     flex-direction: column;
+    background-color: rgba(16, 24, 19, 0.25);
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background-color 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 .explore-card:hover {
     border-color: var(--gold);
-    background: var(--background);
+    background-color: var(--background);
 }
 
 .card-number {
@@ -342,6 +409,12 @@ a:focus-visible, button:focus-visible {
     margin-top: auto;
 }
 
+.card-link span {
+    display: inline-block;
+    margin-left: 6px;
+    transition: transform 0.25s ease;
+}
+
 .site-footer {
     border-top: 1px solid var(--border);
 }
@@ -357,6 +430,42 @@ a:focus-visible, button:focus-visible {
 .footer-content p {
     color: var(--muted);
     font-size: 13px;
+}
+
+.reveal.is-visible {
+    animation: fade-up 0.7s ease;
+}
+
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (hover: hover) {
+    .button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+    }
+
+    .button:active {
+        transform: scale(0.98);
+    }
+
+    .explore-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .explore-card:hover .card-link span {
+        transform: translate(3px, -3px);
+    }
 }
 
 @media (max-width: 1000px) {
@@ -384,6 +493,7 @@ a:focus-visible, button:focus-visible {
 @media (max-width: 700px) {
     .header-content {
         gap: 16px;
+        padding: 16px 0;
     }
 
     .logo {
@@ -400,6 +510,8 @@ a:focus-visible, button:focus-visible {
 
     #main-nav {
         width: 100%;
+        max-height: 65vh;
+        overflow-y: auto;
     }
 
     .menu-ready #main-nav {
@@ -408,6 +520,7 @@ a:focus-visible, button:focus-visible {
 
     .menu-ready #main-nav.is-open {
         display: block;
+        animation: fade-up 0.25s ease;
     }
 
     .nav-links {
@@ -477,5 +590,24 @@ a:focus-visible, button:focus-visible {
     .footer-content {
         flex-direction: column;
         align-items: flex-start;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .button:hover, .button:active, .explore-card:hover {
+        transform: none;
+    }
+
+    .explore-card:hover .card-link span {
+        transform: none;
     }
 }
