@@ -18,6 +18,8 @@ const revealItems = document.querySelectorAll(".reveal");
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 if ("IntersectionObserver" in window && !reducedMotion.matches) {
+    document.documentElement.classList.add("can-reveal");
+
     const revealObserver = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
             if (entry.isIntersecting) {
