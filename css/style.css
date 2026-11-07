@@ -6,7 +6,6 @@
     --text: #F5EEDD;
     --muted: #BBC1BE;
     --gold: #E3C888;
-    --teal: #94D3C6;
     --border: #515957;
     --heading-font: 'Libre Caslon Display', Georgia, serif;
 }
@@ -71,7 +70,7 @@ img {
 }
 
 a:focus-visible, button:focus-visible {
-    outline: 3px solid var(--teal);
+    outline: 3px solid var(--gold);
     outline-offset: 6px;
 }
 
@@ -129,11 +128,19 @@ a:focus-visible, button:focus-visible {
 }
 
 .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     font-family: var(--heading-font);
     font-size: 29px;
     text-decoration: none;
     line-height: 1.2;
     transition: color 0.2s ease;
+}
+
+.logo-img {
+    width: 34px;
+    height: auto;
 }
 
 .logo span {
@@ -168,7 +175,7 @@ a:focus-visible, button:focus-visible {
 }
 
 .eyebrow {
-    color: var(--teal);
+    color: var(--gold);
     font-size: 11px;
     font-weight: bold;
     letter-spacing: 2px;
@@ -241,7 +248,7 @@ a:focus-visible, button:focus-visible {
     display: inline-block;
     padding: 13px 22px;
     border: 1px solid transparent;
-    border-radius: 6px;
+    border-radius: 999px;
     font-size: 14px;
     font-weight: bold;
     text-align: center;
@@ -255,25 +262,29 @@ a:focus-visible, button:focus-visible {
 }
 
 .button-primary {
-    background: var(--gold);
-    color: var(--background);
+    background-color: rgba(227, 200, 136, 0.18);
     border-color: var(--gold);
+    color: var(--text);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
 }
 
 .button-primary:hover {
-    background: var(--text);
-    border-color: var(--text);
+    background-color: var(--gold);
+    color: var(--background);
 }
 
 .button-secondary {
-    background-color: rgba(10, 18, 14, 0.65);
-    border-color: var(--gold);
+    background-color: rgba(16, 24, 19, 0.35);
+    border-color: rgba(227, 200, 136, 0.5);
     color: var(--text);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
 }
 
 .button-secondary:hover {
-    background: var(--gold);
-    color: var(--background);
+    background-color: rgba(227, 200, 136, 0.12);
+    border-color: var(--gold);
 }
 
 .button:active {
@@ -368,7 +379,7 @@ a:focus-visible, button:focus-visible {
 }
 
 .card-number {
-    color: var(--teal);
+    color: var(--gold);
     font-size: 10px;
     letter-spacing: 1.5px;
     margin-bottom: 32px;
@@ -485,6 +496,7 @@ a:focus-visible, button:focus-visible {
 
     .header-content > .logo {
         max-width: 100%;
+        justify-content: center;
         text-align: center;
     }
 
