@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&display=swap');
 
 :root {
-    --background: #101315;
-    --surface: #191E20;
+    --background: #101813;
+    --surface: #19251D;
     --text: #F5EEDD;
     --muted: #BBC1BE;
-    --gold: #E5BD77;
+    --gold: #E3C888;
     --teal: #94D3C6;
     --border: #515957;
     --heading-font: 'Libre Caslon Display', Georgia, serif;
@@ -25,6 +25,7 @@ body {
     line-height: 1.7;
     min-height: 100vh;
 }
+
 h1, h2, h3 {
     font-family: var(--heading-font);
     font-weight: 400;
@@ -45,6 +46,12 @@ h1 span, h2 span {
 
 a {
     color: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 .container {
@@ -141,31 +148,42 @@ a:focus-visible, button:focus-visible {
 }
 
 .intro {
-    padding: 80px 0;
-    background: radial-gradient(ellipse at 85% 50%, #24312E 0%, #101315 65%);
-}
-
-.intro-layout {
+    min-height: 680px;
     display: flex;
     align-items: center;
-    gap: 60px;
+    padding: 90px 0;
+    background-color: var(--background);
+    background-image:
+        linear-gradient(
+            to right,
+            rgba(10, 18, 14, 0.92),
+            rgba(10, 18, 14, 0.55),
+            rgba(10, 18, 14, 0.12)
+        ),
+        url("../images/home-background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .intro-copy {
-    flex: 1;
-    min-width: 0;
+    max-width: 580px;
+}
+
+.intro .eyebrow {
+    color: var(--gold);
 }
 
 .intro h1 {
     font-size: 100px;
     line-height: 0.98;
     letter-spacing: -2px;
-    margin-bottom: 30px;
+    margin-bottom: 28px;
 }
 
 .intro-text {
     max-width: 460px;
-    color: var(--muted);
+    color: var(--text);
     font-size: 17px;
     margin-bottom: 32px;
 }
@@ -193,82 +211,26 @@ a:focus-visible, button:focus-visible {
     border-color: var(--gold);
 }
 
-.button-primary span {
-    margin-left: 14px;
-}
-
 .button-primary:hover {
     background: var(--text);
     border-color: var(--text);
 }
 
 .button-secondary {
-    border-color: var(--border);
+    background-color: rgba(10, 18, 14, 0.65);
+    border-color: var(--gold);
     color: var(--text);
 }
 
 .button-secondary:hover {
-    border-color: var(--gold);
-    color: var(--gold);
+    background: var(--gold);
+    color: var(--background);
 }
 
 .intro-note {
-    color: var(--muted);
+    color: var(--text);
     font-size: 12px;
     margin-top: 28px;
-}
-
-.realm-art {
-    width: 360px;
-    flex-shrink: 0;
-    padding: 12px;
-    border: 1px solid var(--border);
-    border-radius: 190px 190px 4px 4px;
-}
-
-.realm-frame {
-    min-height: 470px;
-    padding: 46px 24px 28px;
-    border: 1px solid #9B8259;
-    border-radius: 180px 180px 0 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    text-align: center;
-    background: linear-gradient(150deg, #263932, #151B1A);
-}
-
-.realm-top, .realm-bottom {
-    color: var(--gold);
-    font-size: 10px;
-    letter-spacing: 3px;
-}
-
-.realm-orbit {
-    width: 180px;
-    height: 180px;
-    border: 1px solid #9B8259;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.realm-mark {
-    font-family: var(--heading-font);
-    font-size: 67px;
-    color: var(--gold);
-}
-
-.realm-mark span {
-    font-size: 37px;
-}
-
-.realm-title {
-    font-family: var(--heading-font);
-    font-size: 35px;
-    line-height: 1.1;
 }
 
 .chapter-strip {
@@ -384,22 +346,13 @@ a:focus-visible, button:focus-visible {
     font-size: 13px;
 }
 
-
 @media (max-width: 1000px) {
-    .intro-layout {
-        gap: 32px;
+    .header-content {
+        flex-wrap: wrap;
     }
 
     .intro h1 {
-        font-size: 76px;
-    }
-
-    .realm-art {
-        width: 300px;
-    }
-
-    .realm-frame {
-        min-height: 430px;
+        font-size: 80px;
     }
 
     .story-layout {
@@ -413,17 +366,19 @@ a:focus-visible, button:focus-visible {
     .explore-card {
         flex-basis: 280px;
     }
-
 }
 
 @media (max-width: 700px) {
     .header-content {
-        flex-wrap: wrap;
         gap: 16px;
     }
 
     .logo {
         font-size: 25px;
+    }
+
+    .header-content > .logo {
+        max-width: 65%;
     }
 
     .menu-ready .menu-button {
@@ -453,27 +408,23 @@ a:focus-visible, button:focus-visible {
     }
 
     .intro {
-        padding: 56px 0;
-    }
-
-    .intro-layout {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 44px;
+        min-height: 600px;
+        padding: 64px 0;
+        background-position: 65% center;
+        background-image:
+            linear-gradient(
+                rgba(10, 18, 14, 0.65),
+                rgba(10, 18, 14, 0.85)
+            ),
+            url("../images/home-background.jpg");
     }
 
     .intro h1 {
-        font-size: 68px;
+        font-size: 64px;
     }
 
     .intro-text {
         font-size: 16px;
-    }
-
-    .realm-art {
-        width: 100%;
-        max-width: 360px;
-        margin: 0 auto;
     }
 
     .strip-content {
@@ -511,5 +462,4 @@ a:focus-visible, button:focus-visible {
         flex-direction: column;
         align-items: flex-start;
     }
-
 }
