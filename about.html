@@ -12,22 +12,14 @@
 <body>
 
   <header class="site-header">
-    <div class="container nav-bar">
+    <div class="container header-content">
       <a href="index.html" class="logo">
-        <span class="img-box small" data-label="logo.png">
-          <img src="images/logo.png" alt="History Quest logo">
-        </span>
+        <img class="logo-img" src="images/logo.png" alt="History Quest logo">
         <span class="logo-text">History Quest</span>
       </a>
 
-      <button class="menu-btn" id="menuBtn" aria-label="Open menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <nav class="main-nav" id="mainNav">
-        <ul>
+      <nav id="main-nav">
+        <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="features.html">Features</a></li>
           <li><a href="levels.html">Levels</a></li>
@@ -39,20 +31,20 @@
   </header>
 
   <main>
-    <section class="page-hero">
-      <div class="container">
+    <section class="section grades-section">
+      <div class="container center">
         <h1>About the game</h1>
         <p>(content)</p>
       </div>
     </section>
 
-    <section>
-      <div class="container split">
-        <div class="img-box" data-label="about-mission.jpg">
+    <section class="section">
+      <div class="container feature">
+        <div class="feature-img">
           <img src="images/about-mission.jpg" alt="Sri Lankan heritage">
         </div>
-        <div>
-          <span class="tag">Our mission</span>
+        <div class="feature-copy">
+          <p class="eyebrow">Our mission</p>
           <h2>Why we made this game</h2>
           <p>(content)</p>
           <p>(content)</p>
@@ -60,35 +52,29 @@
       </div>
     </section>
 
-    <section class="alt">
+    <section class="section problem-section">
       <div class="container">
-        <div class="section-title">
-          <span class="tag">What we care about</span>
+        <div class="center">
+          <p class="eyebrow">What we care about</p>
           <h2>Made with care</h2>
           <p>(content)</p>
         </div>
 
-        <div class="card-grid">
-          <div class="card">
-            <div class="img-box icon small no-frame" data-label="icon-fun.png">
-              <img src="images/icon-fun.png" alt="Fun icon">
-            </div>
+        <div class="card-row">
+          <div class="explore-card">
+            <img src="images/icon-fun.png" alt="Fun icon" width="56">
             <h3>Fun to play</h3>
             <p>(content)</p>
           </div>
 
-          <div class="card">
-            <div class="img-box icon small no-frame" data-label="icon-facts.png">
-              <img src="images/icon-facts.png" alt="Facts icon">
-            </div>
+          <div class="explore-card">
+            <img src="images/icon-facts.png" alt="Facts icon" width="56">
             <h3>Checked facts</h3>
             <p>(content)</p>
           </div>
 
-          <div class="card">
-            <div class="img-box icon small no-frame" data-label="icon-languages.png">
-              <img src="images/icon-languages.png" alt="Languages icon">
-            </div>
+          <div class="explore-card">
+            <img src="images/icon-languages.png" alt="Languages icon" width="56">
             <h3>For every child</h3>
             <p>(content)</p>
           </div>
@@ -96,51 +82,41 @@
       </div>
     </section>
 
-    <section>
+    <section class="section">
       <div class="container">
-        <div class="section-title">
-          <span class="tag">The team</span>
+        <div class="center">
+          <p class="eyebrow">The team</p>
           <h2>Meet the team</h2>
           <p>(content)</p>
         </div>
 
-        <div class="team-grid">
-          <div class="member">
-            <div class="img-box" data-label="member-1.jpg">
-              <img src="images/member-1.jpg" alt="Team member 1">
-            </div>
+        <div class="card-row">
+          <div class="explore-card">
+            <img src="images/member-1.jpg" alt="Team member 1">
             <h3>(name)</h3>
             <p>(role)</p>
           </div>
 
-          <div class="member">
-            <div class="img-box" data-label="member-2.jpg">
-              <img src="images/member-2.jpg" alt="Team member 2">
-            </div>
+          <div class="explore-card">
+            <img src="images/member-2.jpg" alt="Team member 2">
             <h3>(name)</h3>
             <p>(role)</p>
           </div>
 
-          <div class="member">
-            <div class="img-box" data-label="member-3.jpg">
-              <img src="images/member-3.jpg" alt="Team member 3">
-            </div>
+          <div class="explore-card">
+            <img src="images/member-3.jpg" alt="Team member 3">
             <h3>(name)</h3>
             <p>(role)</p>
           </div>
 
-          <div class="member">
-            <div class="img-box" data-label="member-4.jpg">
-              <img src="images/member-4.jpg" alt="Team member 4">
-            </div>
+          <div class="explore-card">
+            <img src="images/member-4.jpg" alt="Team member 4">
             <h3>(name)</h3>
             <p>(role)</p>
           </div>
 
-          <div class="member">
-            <div class="img-box" data-label="member-5.jpg">
-              <img src="images/member-5.jpg" alt="Team member 5">
-            </div>
+          <div class="explore-card">
+            <img src="images/member-5.jpg" alt="Team member 5">
             <h3>(name)</h3>
             <p>(role)</p>
           </div>
@@ -148,28 +124,26 @@
       </div>
     </section>
 
-    <section class="cta">
-      <div class="container">
+    <section class="section waitlist-section">
+      <div class="container waitlist-box">
         <h2>Ready to start your quest?</h2>
         <p>(content)</p>
-        <a href="download.html" class="btn btn-main">Download now</a>
+        <a href="download.html" class="button button-primary">Download now</a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-grid">
-      <div class="footer-about">
+      <div class="footer-brand">
         <a href="index.html" class="logo">
-          <span class="img-box small" data-label="logo.png">
-            <img src="images/logo.png" alt="History Quest logo">
-          </span>
+          <img class="logo-img" src="images/logo.png" alt="History Quest logo">
           <span class="logo-text">History Quest</span>
         </a>
         <p>(content)</p>
       </div>
 
-      <div>
+      <div class="footer-col">
         <h4>Pages</h4>
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -180,7 +154,7 @@
         </ul>
       </div>
 
-      <div>
+      <div class="footer-col">
         <h4>Contact</h4>
         <ul>
           <li>(content)</li>
@@ -189,7 +163,9 @@
       </div>
     </div>
 
-    <p class="copyright">&copy; 2026 Sri Lanka History Quest</p>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Sri Lanka History Quest</p>
+    </div>
   </footer>
 
   <script src="js/script.js"></script>

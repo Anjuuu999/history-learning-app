@@ -12,22 +12,14 @@
 <body>
 
   <header class="site-header">
-    <div class="container nav-bar">
+    <div class="container header-content">
       <a href="index.html" class="logo">
-        <span class="img-box small" data-label="logo.png">
-          <img src="images/logo.png" alt="History Quest logo">
-        </span>
+        <img class="logo-img" src="images/logo.png" alt="History Quest logo">
         <span class="logo-text">History Quest</span>
       </a>
 
-      <button class="menu-btn" id="menuBtn" aria-label="Open menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <nav class="main-nav" id="mainNav">
-        <ul>
+      <nav id="main-nav">
+        <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="features.html" class="active">Features</a></li>
           <li><a href="levels.html">Levels</a></li>
@@ -39,66 +31,54 @@
   </header>
 
   <main>
-    <section class="page-hero">
-      <div class="container">
+    <section class="section grades-section">
+      <div class="container center">
         <h1>Features</h1>
         <p>(content)</p>
       </div>
     </section>
 
-    <section>
+    <section class="section">
       <div class="container">
-        <div class="section-title">
-          <span class="tag">Everything in the game</span>
+        <div class="center">
+          <p class="eyebrow">Everything in the game</p>
           <h2>Built for young explorers</h2>
           <p>(content)</p>
         </div>
 
-        <div class="card-grid">
-          <div class="card">
-            <div class="img-box icon small no-frame" data-label="icon-quiz.png">
-              <img src="images/icon-quiz.png" alt="Quiz icon">
-            </div>
+        <div class="card-row">
+          <div class="explore-card">
+            <img src="images/icon-quiz.png" alt="Quiz icon" width="56">
             <h3>Quizzes</h3>
             <p>(content)</p>
           </div>
 
-          <div class="card">
-            <div class="img-box icon small no-frame" data-label="icon-puzzle.png">
-              <img src="images/icon-puzzle.png" alt="Puzzle icon">
-            </div>
+          <div class="explore-card">
+            <img src="images/icon-puzzle.png" alt="Puzzle icon" width="56">
             <h3>Puzzles</h3>
             <p>(content)</p>
           </div>
 
-          <div class="card">
-            <div class="img-box icon small no-frame" data-label="icon-rewards.png">
-              <img src="images/icon-rewards.png" alt="Rewards icon">
-            </div>
+          <div class="explore-card">
+            <img src="images/icon-rewards.png" alt="Rewards icon" width="56">
             <h3>Badges and rewards</h3>
             <p>(content)</p>
           </div>
 
-          <div class="card">
-            <div class="img-box icon small no-frame" data-label="icon-languages.png">
-              <img src="images/icon-languages.png" alt="Languages icon">
-            </div>
+          <div class="explore-card">
+            <img src="images/icon-languages.png" alt="Languages icon" width="56">
             <h3>Three languages</h3>
             <p>(content)</p>
           </div>
 
-          <div class="card">
-            <div class="img-box icon small no-frame" data-label="icon-progress.png">
-              <img src="images/icon-progress.png" alt="Progress icon">
-            </div>
+          <div class="explore-card">
+            <img src="images/icon-progress.png" alt="Progress icon" width="56">
             <h3>Saves your progress</h3>
             <p>(content)</p>
           </div>
 
-          <div class="card">
-            <div class="img-box icon small no-frame" data-label="icon-offline.png">
-              <img src="images/icon-offline.png" alt="Offline icon">
-            </div>
+          <div class="explore-card">
+            <img src="images/icon-offline.png" alt="Offline icon" width="56">
             <h3>Works offline</h3>
             <p>(content)</p>
           </div>
@@ -106,35 +86,35 @@
       </div>
     </section>
 
-    <section class="alt">
+    <section class="section problem-section">
       <div class="container">
-        <div class="section-title">
-          <span class="tag">How it works</span>
+        <div class="center">
+          <p class="eyebrow">How it works</p>
           <h2>Four steps to start playing</h2>
           <p>(content)</p>
         </div>
 
-        <div class="steps">
-          <div class="step">
-            <span class="step-num">1</span>
+        <div class="card-row">
+          <div class="explore-card">
+            <span class="card-number">1</span>
             <h3>Pick your language</h3>
             <p>(content)</p>
           </div>
 
-          <div class="step">
-            <span class="step-num">2</span>
+          <div class="explore-card">
+            <span class="card-number">2</span>
             <h3>Choose a level</h3>
             <p>(content)</p>
           </div>
 
-          <div class="step">
-            <span class="step-num">3</span>
+          <div class="explore-card">
+            <span class="card-number">3</span>
             <h3>Play and learn</h3>
             <p>(content)</p>
           </div>
 
-          <div class="step">
-            <span class="step-num">4</span>
+          <div class="explore-card">
+            <span class="card-number">4</span>
             <h3>Earn badges</h3>
             <p>(content)</p>
           </div>
@@ -142,28 +122,26 @@
       </div>
     </section>
 
-    <section class="cta">
-      <div class="container">
+    <section class="section waitlist-section">
+      <div class="container waitlist-box">
         <h2>Ready to start your quest?</h2>
         <p>(content)</p>
-        <a href="download.html" class="btn btn-main">Download now</a>
+        <a href="download.html" class="button button-primary">Download now</a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-grid">
-      <div class="footer-about">
+      <div class="footer-brand">
         <a href="index.html" class="logo">
-          <span class="img-box small" data-label="logo.png">
-            <img src="images/logo.png" alt="History Quest logo">
-          </span>
+          <img class="logo-img" src="images/logo.png" alt="History Quest logo">
           <span class="logo-text">History Quest</span>
         </a>
         <p>(content)</p>
       </div>
 
-      <div>
+      <div class="footer-col">
         <h4>Pages</h4>
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -174,7 +152,7 @@
         </ul>
       </div>
 
-      <div>
+      <div class="footer-col">
         <h4>Contact</h4>
         <ul>
           <li>(content)</li>
@@ -183,7 +161,9 @@
       </div>
     </div>
 
-    <p class="copyright">&copy; 2026 Sri Lanka History Quest</p>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Sri Lanka History Quest</p>
+    </div>
   </footer>
 
   <script src="js/script.js"></script>
