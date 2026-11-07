@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&display=swap');
 
 :root {
-    --background: #101813;
-    --surface: #19251D;
+    --background: #101315;
+    --surface: #191E20;
     --text: #F5EEDD;
     --muted: #BBC1BE;
-    --gold: #E3C888;
+    --gold: #E5BD77;
     --teal: #94D3C6;
     --border: #515957;
     --heading-font: 'Libre Caslon Display', Georgia, serif;
@@ -25,7 +25,6 @@ body {
     line-height: 1.7;
     min-height: 100vh;
 }
-
 h1, h2, h3 {
     font-family: var(--heading-font);
     font-weight: 400;
@@ -143,7 +142,7 @@ a:focus-visible, button:focus-visible {
 
 .intro {
     padding: 80px 0;
-    background: radial-gradient(ellipse at 85% 50%, #304332 0%, #101813 65%);
+    background: radial-gradient(ellipse at 85% 50%, #24312E 0%, #101315 65%);
 }
 
 .intro-layout {
@@ -249,7 +248,6 @@ a:focus-visible, button:focus-visible {
 .realm-orbit {
     width: 180px;
     height: 180px;
-    borderado: none;
     border: 1px solid #9B8259;
     border-radius: 50%;
     display: flex;
@@ -386,6 +384,7 @@ a:focus-visible, button:focus-visible {
     font-size: 13px;
 }
 
+
 @media (max-width: 1000px) {
     .intro-layout {
         gap: 32px;
@@ -414,6 +413,7 @@ a:focus-visible, button:focus-visible {
     .explore-card {
         flex-basis: 280px;
     }
+
 }
 
 @media (max-width: 700px) {
@@ -463,7 +463,7 @@ a:focus-visible, button:focus-visible {
     }
 
     .intro h1 {
-        font-size: 56px;
+        font-size: 68px;
     }
 
     .intro-text {
@@ -511,132 +511,5 @@ a:focus-visible, button:focus-visible {
         flex-direction: column;
         align-items: flex-start;
     }
-}
 
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-.inner-page section {
-    padding: 56px 0;
-}
-
-.page-hero h1 {
-    font-size: 64px;
-    margin-bottom: 20px;
-}
-
-.inner-page h2, .inner-page h3, .inner-page p {
-    margin-bottom: 20px;
-}
-
-.inner-page p {
-    color: var(--muted);
-}
-
-.alt, .cta {
-    background: var(--surface);
-}
-
-.section-title {
-    max-width: 700px;
-    margin-bottom: 32px;
-}
-
-.tag, .level-num, .step-num {
-    display: block;
-    color: var(--gold);
-    margin-bottom: 16px;
-}
-
-.card-grid, .team-grid, .steps {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
-}
-
-.card, .member, .step {
-    flex: 1 1 250px;
-    min-width: 0;
-    padding: 24px;
-    border: 1px solid var(--border);
-}
-
-.img-box {
-    margin-bottom: 24px;
-}
-
-.img-box.small {
-    width: 72px;
-}
-
-.split, .level-row, .download-box {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 40px;
-    margin-bottom: 40px;
-}
-
-.split > div, .level-row > div, .download-box > div {
-    flex: 1 1 280px;
-    min-width: 0;
-}
-
-.activity-list {
-    padding-left: 24px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 13px 22px;
-    background: var(--gold);
-    color: var(--background);
-    text-decoration: none;
-    border-radius: 3px;
-}
-
-.btn:hover {
-    background: var(--text);
-}
-
-.store-badge, .qr {
-    max-width: 180px;
-}
-
-.table-wrap {
-    overflow-x: auto;
-}
-
-.info-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.info-table th, .info-table td {
-    padding: 16px;
-    border: 1px solid var(--border);
-    text-align: left;
-}
-
-.faq details {
-    padding: 20px 0;
-    border-bottom: 1px solid var(--border);
-}
-
-.faq summary {
-    cursor: pointer;
-    color: var(--gold);
-}
-
-@media (max-width: 700px) {
-    .page-hero h1 {
-        font-size: 48px;
-    }
-
-    .header-content > .logo {
-        max-width: 65%;
-    }
 }
