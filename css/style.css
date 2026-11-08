@@ -606,6 +606,74 @@ a:focus-visible, button:focus-visible {
     box-shadow: 0 0 18px rgba(227, 200, 136, 0.35);
 }
 
+.steps-list {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+    margin-top: 50px;
+    list-style: none;
+}
+
+.steps-list::before {
+    content: "";
+    position: absolute;
+    top: 26px;
+    left: 12.5%;
+    right: 12.5%;
+    height: 1px;
+    background-color: rgba(227, 200, 136, 0.45);
+}
+
+.step-item {
+    position: relative;
+    text-align: center;
+}
+
+.step-number {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    margin: 0 auto 22px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    background-color: var(--background);
+    color: var(--gold);
+    font-family: var(--heading-font);
+    font-size: 22px;
+    transition: box-shadow 0.25s ease;
+}
+
+.step-item:hover .step-number {
+    box-shadow: 0 0 18px rgba(227, 200, 136, 0.35);
+}
+
+.step-item h3 {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.step-item p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.can-reveal .step-item:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.can-reveal .step-item:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+.can-reveal .step-item:nth-child(4) {
+    transition-delay: 0.3s;
+}
+
 .explore-section {
     background: var(--surface);
     border-top: 1px solid var(--border);
@@ -808,6 +876,15 @@ a:focus-visible, button:focus-visible {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .steps-list {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 44px;
+    }
+
+    .steps-list::before {
+        display: none;
+    }
+
     .story-layout {
         gap: 40px;
     }
@@ -931,6 +1008,33 @@ a:focus-visible, button:focus-visible {
 
     .features-grid {
         grid-template-columns: 1fr;
+    }
+
+    .steps-list {
+        grid-template-columns: 1fr;
+        row-gap: 36px;
+    }
+
+    .steps-list::before {
+        display: block;
+        top: 0;
+        bottom: 0;
+        left: 26px;
+        right: auto;
+        width: 1px;
+        height: auto;
+    }
+
+    .step-item {
+        padding-left: 76px;
+        text-align: left;
+    }
+
+    .step-number {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 0;
     }
 
     .intro-text {
