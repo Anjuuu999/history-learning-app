@@ -231,6 +231,15 @@ a:focus-visible, button:focus-visible {
     margin-bottom: 28px;
 }
 
+.page-intro {
+    min-height: 440px;
+    padding: 80px 0;
+}
+
+.page-intro h1 {
+    font-size: 80px;
+}
+
 .intro-text {
     max-width: 460px;
     color: var(--text);
@@ -754,6 +763,10 @@ a:focus-visible, button:focus-visible {
         font-size: 80px;
     }
 
+    .page-intro h1 {
+        font-size: 68px;
+    }
+
     .story-layout {
         gap: 40px;
     }
@@ -864,6 +877,15 @@ a:focus-visible, button:focus-visible {
 
     .intro h1 {
         font-size: 64px;
+    }
+
+    .page-intro {
+        min-height: 360px;
+        padding: 56px 0;
+    }
+
+    .page-intro h1 {
+        font-size: 52px;
     }
 
     .intro-text {
