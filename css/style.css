@@ -347,7 +347,6 @@ a:focus-visible, button:focus-visible {
     text-decoration: underline;
     text-underline-offset: 5px;
     font-size: 14px;
-    transition: color 0.2s ease;
 }
 
 .text-link:hover {
@@ -1136,5 +1135,66 @@ a:focus-visible, button:focus-visible {
 
     .feature:hover .feature-img img, .grade-card:hover {
         transform: none;
+    }
+}
+
+.feature-languages {
+    background-color: var(--surface);
+    border-top: 1px solid var(--border);
+}
+
+.feature-language-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 44px;
+}
+
+.feature-language-card {
+    min-width: 0;
+    padding: 36px 24px;
+    text-align: center;
+    border: 1px solid rgba(227, 200, 136, 0.35);
+    border-radius: 14px;
+    background-color: rgba(16, 24, 19, 0.35);
+}
+
+.feature-language-letter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 76px;
+    height: 76px;
+    margin: 0 auto 24px;
+    border: 1px solid rgba(227, 200, 136, 0.45);
+    border-radius: 50%;
+    background-color: rgba(227, 200, 136, 0.08);
+    color: var(--gold);
+    font-family: var(--heading-font);
+    font-size: 36px;
+    line-height: 1;
+}
+
+.feature-language-card h3 {
+    font-size: 28px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.feature-language-card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.feature-language-note {
+    margin-top: 28px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+@media (max-width: 700px) {
+    .feature-language-grid {
+        grid-template-columns: 1fr;
     }
 }
